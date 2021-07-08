@@ -12,6 +12,18 @@
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+  <ion-item>
+    <ion-label position="stacked">Textarea</ion-label>
+    <ion-textarea [(ngModel)] = "currentInput" placeholder="placeholder"></ion-textarea>
+  </ion-item>
+  <ion-button expand="full" color="secondary" (click) = "addBlog()">Add Blog</ion-button>
+  <ion-list>
+    <ion-list-header>
+      Recent Conversations
+    </ion-list-header>
+    <ion-item *ngFor  = "let blog of blogs" >
+      <ion-label>
+        <p>{{blog}}</p>
+      </ion-label>
+    </ion-item>
+   </ion-list>
